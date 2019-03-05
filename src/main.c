@@ -1,8 +1,9 @@
 #include "header.h"
 
-int main(int argc, char ** argv)
+int main()
 {
-	FILE * fp = openfile(argc);
+	FILE * fp = fopen("myContactList.db", "ab");
+	/*openfile(argc);*/
 
 	if (fp == NULL)
 	{
