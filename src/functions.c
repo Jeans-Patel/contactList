@@ -1,5 +1,6 @@
-FILE * openfile(int argc)
+#include "header.h"
+
+void userinput()
 {
-	FILE * fptr = fopen("myContactList.db", "ab");
-	return fptr;
+	contact * person = malloc(sizeof(contact));
 }

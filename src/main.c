@@ -1,9 +1,9 @@
 #include "header.h"
 
-int main()
+int main(int argc, char ** argv)
 {
 	FILE * fp = fopen("myContactList.db", "ab");
-	/*openfile(argc);*/
+	
 
 	if (fp == NULL)
 	{
@@ -11,5 +11,9 @@ int main()
 		exit(1);
 	}
 
+	void userinput();
+
+
+	fclose(fp);
 	return 0;
 }
