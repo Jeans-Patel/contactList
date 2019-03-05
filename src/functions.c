@@ -1,8 +1,5 @@
-void helloworld (int x){
-	int i;
-
-	for (i = 0; i < x; ++i)
-	{
-		printf("Hello\n");
-	}
+FILE * openfile(int argc)
+{
+	FILE * fptr = fopen("myContactList.db", "ab");
+	return fptr;
 }

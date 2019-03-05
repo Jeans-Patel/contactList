@@ -2,14 +2,13 @@
 
 int main(int argc, char ** argv)
 {
-	int a;
+	FILE * fp = openfile(argc);
 
-	printf("Please input a number: ");
-	scanf("%d", &a);
-
-	helloworld(a);
+	if (fp == NULL)
+	{
+		printf("There was an error with the file,\n");
+		exit(1);
+	}
 
 	return 0;
-
-
 }

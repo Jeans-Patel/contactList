@@ -16,8 +16,6 @@ struct contact {
 
 typedef struct contact contact;
 
-/* int filecheck(); */
-void helloworld(int x);
-
+int openfile(int argc);
 
 #endif
