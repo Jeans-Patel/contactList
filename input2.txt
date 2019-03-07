@@ -1,0 +1,27 @@
+Yes
+Luiza
+Antonie
+School of Computer Science
+3335497900
+lantonie@uoguelph.ca
+Yes
+David
+Calvert
+University of Guelph
+3335308520
+dcalvert@uoguelph.ca
+Yes
+David
+Chiu
+
+3335295267
+dchiu@uoguelph.ca
+Yes
+Dan
+Gillis
+
+3335295100
+dgillis@uoguelph.ca
+No
+No
+

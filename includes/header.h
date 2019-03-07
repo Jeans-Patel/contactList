@@ -14,7 +14,14 @@ struct contact {
 	long next;
 };
 
+typedef struct contactdata {
+	char * firstname;
+	char * lastname;
+	char * companyname;
+	char * email;
+} contactdata;
+
 typedef struct contact contact;
 
-void userinput();
+void userinput(FILE * fp);
 #endif

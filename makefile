@@ -18,5 +18,8 @@ $(BINDIR)main.o: $(SRCDIR)main.c
 $(BINDIR)functions.o: $(SRCDIR)functions.c
 	$(CC) $(CFLAGS) -c $(SRCDIR)functions.c -o $@
 
+run:
+	./bin/contactList
+
 clean:
 	rm ./bin/*o ./contactList

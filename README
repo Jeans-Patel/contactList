@@ -1,0 +1,43 @@
+# What's provided
+
+This archive contains 3 relevant things:
+
+-2 input files that will generate contact databases for you (input1.txt and input2.txt) when piped into your program.  Expected results are below (including file size and records stored). 
+-1 sample database.  The myContactList.db contains 2 records which can be read with the phone numbers provided below.  Replace your myContactList.db with the provided one to test reading from a database that matches the spec.
+
+# To redirect input to a program:
+
+./bin/contactList < *file to pipe in*
+
+So if you wanted to redirect the contents of input1.txt to your program, the command would look like the following:
+
+./bin/contactList < input1.txt
+
+
+# Expected results for text inputs:
+
+All expected outputs are in the order <first name>, <last name>, <company>, <email> for strings
+
+## input1.txt
+
+myContactList.db should be 261 bytes exactly
+
+3335556666 should print the record for Deb, Stacey, University of Guelph, dastacey@uoguelph.ca
+4162599373 should print the record for Donald, Duck, <no company>, dduck@disney.com
+4162344567 should print the record for <no first name>, <no last name>, Ducks Unlimited, ducks@unlimited.ca
+
+
+## input2.txt
+
+myContactList.db should be 370 bytes exactly
+
+3335497900 should bring up the record for Luiza, Antonie, School of Computer Science, lantonie@uoguelph.ca
+3335308520 should bring up the record for David, Calvert, School of Computer Science, dcalvert@uoguelph.ca
+3335295267 should bring up the record for David, Chiu, <no company>, dchiu@uoguelph.ca
+3335295100 should bring up the record for Dan, Gillis, <no company>, dgillis@uoguelph.ca
+
+
+# Expected results for provided myContactList.db
+
+1112223333 should bring up the record for Barry, Allen, Justice League, the@flash.com
+2224561234 should bring up the record for <no first name>, <no last name>, Justice League, justice@league.net
