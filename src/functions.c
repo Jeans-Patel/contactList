@@ -4,6 +4,7 @@ void userinput(FILE * fp)
 {
 	char buffer[1000];
 	int i = 0;
+	int j = 0;
 	contact * person = malloc(sizeof(contact));
 	contactdata * data = malloc(sizeof(contactdata));
 
@@ -28,30 +29,26 @@ void userinput(FILE * fp)
 		printf("First Name: ");
 		fgets(buffer, 1000, stdin);
 		strtok(buffer, "\n");
-		data[i].firstname = malloc(strlen(buffer)+1);
-		strcpy(data[i].firstname, buffer);
-		person[i].first_name_posn = ftell(fp);
-		fwrite(buffer, strlen(buffer)+1, 1, fp);
-
+		data[i].fn = malloc(strlen(buffer)+1);
+		strcpy(data[i].fn, buffer);
+		person[i].first_name_posn = ftell(fp) + 20;
+		
 		printf("Last Name: ");
 		fgets(buffer, 1000, stdin);
 		strtok(buffer, "\n");
-		data[i].lastname = malloc(strlen(buffer)+1);
-		strcpy(data[i].lastname, buffer);
-		person[i].last_name_posn = ftell(fp);
-		strtok(buffer, "\n");
-		fwrite(buffer, strlen(buffer)+1, 1, fp);
-		
+		data[i].ln = malloc(strlen(buffer)+1);
+		strcpy(data[i].ln, buffer);
+		person[i].last_name_posn = ftell(fp) + 20 + strlen(data[i].fn)+1;
+
 		printf("Company Name: ");
 		fgets(buffer, 1000, stdin);
 		strtok(buffer, "\n");
-		data[i].companyname = malloc(strlen(buffer)+1);
-		strcpy(data[i].companyname, buffer);
-		person[i].company_name_posn = ftell(fp);
-		strtok(buffer, "\n");
-		fwrite(buffer, strlen(buffer)+1, 1, fp);
+		data[i].cn = malloc(strlen(buffer)+1);
+		strcpy(data[i].cn, buffer);
+		person[i].company_name_posn = ftell(fp) + 20 + strlen(data[i].fn) + 1 + strlen(data[i].ln) + 1;
 
 		printf("Phone Number (enter only number): ");
+		fgets(buffer, 1000, stdin);
 		fscanf(stdin, "%lu", &person[i].phone_number);
 		fgetc(stdin);
 
@@ -61,10 +58,24 @@ void userinput(FILE * fp)
 		data[i].email = malloc(strlen(buffer)+1);
 		strcpy(data[i].email, buffer);
 		person[i].email_posn = ftell(fp);
-		strtok(buffer, "\n");
-		fwrite(buffer, strlen(buffer)+1, 1, fp);
 
 		person[i].next = ftell(fp);
+
+		fwrite(contact[i].first_name_posn, sizeof(long), 1, fp);
+		fwrite(contact[i].last_name_posn, sizeof(long), 1, fp);
+		fwrite(contact[i].company_name_posn, sizeof(long), 1, fp);
+		fwrite(contact[i].email_posn, sizeof(long), 1, fp);
+		fwrite(contact[i].next, sizeof(long), 1, fp);
+
+
+
 		i++;
+	}
+
+	for (j = 0; j < i; ++j)
+	{
+		
+
+
 	}
 }

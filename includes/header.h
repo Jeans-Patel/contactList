@@ -15,10 +15,11 @@ struct contact {
 };
 
 typedef struct contactdata {
-	char * firstname;
-	char * lastname;
-	char * companyname;
-	char * email;
+	char * fn;
+	char * ln;
+	char * cn;
+	char * pn;
+	char * e;
 } contactdata;
 
 typedef struct contact contact;
