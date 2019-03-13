@@ -133,6 +133,8 @@ void userInput(FILE * fp)
         {
             person->next = person->email_posn;
             person->email_posn = 0;
+            e[0] = '\0';
+            length[3] = 0;
         }
         else
         {
@@ -259,7 +261,8 @@ int userRead(FILE * fp)
             }
 
         }
-        
+
+        free(addresses);  
     }
 
     return(returnvalue);

@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -ansi -Wall -I$(IDIR)
+CFLAGS = -ansi -Wall -g -I$(IDIR)
 
 IDIR = ./includes/
 SRCDIR = ./src/
