@@ -3,7 +3,7 @@
 void userInput(FILE * fp)
 {
     /* Declaring variables */
-    char buffer[1000];
+    char buffer[1002];
     int i;
     int check1 = 0;
     int length[4];
@@ -43,7 +43,7 @@ void userInput(FILE * fp)
 
         /* Asks for the first name */
         printf("First Name: ");
-        fgets(buffer, 1000, stdin);
+        fgets(buffer, 1002, stdin);
         /* Removes '\n' */
         strtok(buffer, "\n");
         /* Dynamically allocate a string to store the first name */
@@ -70,7 +70,7 @@ void userInput(FILE * fp)
         
         /* Exact same steps except with last name instead. */
         printf("Last Name: ");
-        fgets(buffer, 1000, stdin);
+        fgets(buffer, 1002, stdin);
         strtok(buffer, "\n");
         ln = malloc(strlen(buffer)+1);
         if (strcmp(buffer, "\n") == 0)
@@ -88,7 +88,7 @@ void userInput(FILE * fp)
         }
 
         printf("Company Name: ");
-        fgets(buffer, 1000, stdin);
+        fgets(buffer, 1002, stdin);
         strtok(buffer, "\n");
         cn = malloc(strlen(buffer)+1);
         if (strcmp(buffer, "\n") == 0)
@@ -110,7 +110,7 @@ void userInput(FILE * fp)
         {
             check1 = 0;
             printf("Phone Number (enter only number): ");
-            fgets(buffer, 1000, stdin);
+            fgets(buffer, 1002, stdin);
             strtok(buffer, "\n");
             for (i = 0; i < strlen(buffer); ++i)
             {
@@ -126,7 +126,7 @@ void userInput(FILE * fp)
         } while(check1 != 0);
 
         printf("Email: ");
-        fgets(buffer, 1000, stdin);
+        fgets(buffer, 1002, stdin);
         strtok(buffer, "\n");
         e = malloc(strlen(buffer)+1);
         if (strcmp(buffer, "\n") == 0)
@@ -165,7 +165,7 @@ void userInput(FILE * fp)
 
 int userRead(FILE * fp)
 {
-    char buffer[1000];
+    char buffer[1002];
     int check1 = 0;
     int returnvalue = 0;
     unsigned long phonenumber;
