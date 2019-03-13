@@ -10,13 +10,10 @@ SOURCES = $(SRCDIR)*.c
 all: $(BINDIR)contactList
 
 $(BINDIR)contactList: $(BINDIR)main.o $(BINDIR)functions.o
-	$(CC) $(BINDIR)main.o $(BINDIR)functions.o -o $@
+	$(CC) -o $@ $^
 
-$(BINDIR)main.o: $(SRCDIR)main.c
-	$(CC) $(CFLAGS) -c $(SRCDIR)main.c -o $@
-
-$(BINDIR)functions.o: $(SRCDIR)functions.c
-	$(CC) $(CFLAGS) -c $(SRCDIR)functions.c -o $@
+$(BINDIR)%.o: $(SRCDIR)%.c $(IDIR)header.h
+	$(CC) $(CFLAGS) -c -o $@ $<
 
 run:
 	./bin/contactList
